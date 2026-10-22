@@ -1,8 +1,8 @@
 // ============================================================
 //  COLE AQUI SUAS DUAS INFORMAÇÕES (mantenha as aspas):
 // ============================================================
-const RESEND_API_KEY = "COLE_AQUI_A_CHAVE_DO_RESEND";   // começa com re_
-const TO_EMAIL       = "COLE_AQUI_SEU_EMAIL";           // o MESMO e-mail com que você criou a conta no Resend
+const RESEND_API_KEY = "re_PFKiFtqi_2CermLQEngJHigc9SFNaZGDn";   // começa com re_
+const TO_EMAIL       = "camilamonteirodesign@gmail.com";           // o MESMO e-mail com que você criou a conta no Resend
 // ============================================================
 
 // (opcional) remetente. Sem domínio próprio, deixe como está.
