@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Briefing · Marca pessoal — Camila Monteiro</title>
+<meta name="description" content="Me conta o que você espera da nossa entrega para eu montar um orçamento sob medida.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#23246C">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preload" href="assets/fonts/Sora.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/Fraunces-Italic.ttf" as="font" type="font/ttf" crossorigin>
+<style>
+  /* ============ Camila Monteiro Design System — tokens ============ */
+  @font-face{font-family:"Sora";src:url("assets/fonts/Sora.ttf") format("truetype-variations");font-weight:100 800;font-display:swap}
+  @font-face{font-family:"Fraunces";src:url("assets/fonts/Fraunces.ttf") format("truetype-variations");font-weight:100 900;font-style:normal;font-display:swap}
+  @font-face{font-family:"Fraunces";src:url("assets/fonts/Fraunces-Italic.ttf") format("truetype-variations");font-weight:100 900;font-style:italic;font-display:swap}
+  @font-face{font-family:"Cedarville Cursive";src:url("assets/fonts/CedarvilleCursive-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+
+  :root{
+    --cm-navy:#23246C; --cm-navy-900:#1A1B52; --cm-navy-100:rgba(35,36,108,.08); --cm-navy-200:rgba(35,36,108,.16);
+    --cm-gold:#EBBE21; --cm-gold-soft:#F6E6A4; --cm-gold-700:#C99E12;
+    --cm-red:#E23526;
+    --cm-pink:#ECC2BF; --cm-teal:#45937E; --cm-blue:#A6CDDC; --cm-cream:#F0DFD2;
+    --cm-paper:#F7F2EC; --cm-bone:#EFE9E1; --cm-white:#fff;
+    --cm-ink-700:#3A3B7A; --cm-ink-500:#6E6FA0; --cm-line:#E2DACE;
+    --font-sans:"Sora",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --font-serif:"Fraunces",Georgia,serif;
+    --font-script:"Cedarville Cursive","Brush Script MT",cursive;
+    --radius-sm:8px; --radius-md:14px; --radius-lg:22px;
+    --shadow-sm:0 2px 8px rgba(35,36,108,.08); --shadow-md:0 8px 24px rgba(35,36,108,.10); --shadow-lg:0 18px 48px rgba(35,36,108,.14);
+    --ease-out:cubic-bezier(.22,1,.36,1);
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;overflow-x:clip}
+  body{overflow-x:clip;
+    margin:0;font-family:var(--font-sans);font-size:16px;line-height:1.6;color:var(--cm-navy);
+    background:var(--cm-paper);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  /* papel texturizado fixo atrás de tudo */
+  body::before{content:"";position:fixed;inset:0;z-index:-1;background:var(--cm-paper) url("assets/img/paper.webp") center/cover no-repeat}
+  ::selection{background:var(--cm-gold-soft);color:var(--cm-navy)}
+  :focus-visible{outline:2px solid var(--cm-gold);outline-offset:2px;border-radius:4px}
+
+  .spark{display:inline-block;width:1em;height:1em;background:currentColor;flex:none;
+    clip-path:polygon(50% 0%,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0% 50%,40% 40%)}
+
+  /* ============ progresso ============ */
+  .progress{position:fixed;top:0;left:0;right:0;height:4px;background:rgba(35,36,108,.08);z-index:20}
+  .progress span{display:block;height:100%;width:0;background:var(--cm-gold);transition:width .4s var(--ease-out)}
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px;position:relative}
+
+  /* ============ topo ============ */
+  .brandbar{display:flex;align-items:center;gap:12px;padding:26px 0 0}
+  .brandbar img{height:34px;width:auto;border-radius:6px;box-shadow:var(--shadow-sm)}
+  .brandbar span{font-family:var(--font-script);font-size:24px;line-height:1}
+
+  header.hero{position:relative;padding:56px 0 44px}
+  .bf{position:absolute;pointer-events:none;user-select:none;filter:drop-shadow(0 18px 30px rgba(35,36,108,.20))}
+  .bf-blue{top:-8px;right:-150px;width:300px;transform:rotate(14deg);z-index:0}
+  .eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--cm-ink-500);margin:0 0 22px}
+  .eyebrow .spark{color:var(--cm-gold);font-size:15px}
+  h1{
+    position:relative;z-index:1;font-weight:800;font-size:clamp(34px,6.4vw,56px);line-height:1.06;letter-spacing:-.02em;
+    margin:0 0 24px;max-width:15em;text-wrap:balance;
+  }
+  h1 em{font-family:var(--font-serif);font-style:italic;font-weight:600}
+  .lead{position:relative;z-index:1;font-size:18px;line-height:1.6;color:var(--cm-ink-700);max-width:34em;margin:0 0 6px;text-wrap:pretty}
+  .flourish{font-family:var(--font-script);color:var(--cm-red);font-size:30px;line-height:1.3;margin:14px 0 0;position:relative;z-index:1}
+  .meta{position:relative;z-index:1;display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-size:13px;color:var(--cm-ink-500)}
+  .meta span{display:inline-flex;align-items:center;gap:8px}
+  .meta .spark{color:var(--cm-gold);font-size:12px}
+
+  /* ============ blocos ============ */
+  section.block{
+    position:relative;z-index:1;margin:0 0 26px;padding:36px 34px;background:var(--cm-white);
+    border:1px solid var(--cm-line);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);
+  }
+  .block-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--cm-navy-200)}
+  .block-num{font-family:var(--font-serif);font-style:italic;font-weight:600;font-size:34px;line-height:1;color:var(--cm-gold-700);min-width:44px;letter-spacing:-.02em}
+  .block-head h2{font-weight:700;font-size:22px;line-height:1.25;letter-spacing:-.02em;margin:3px 0 0;text-wrap:balance}
+  .block-head p{margin:6px 0 0;font-size:14px;color:var(--cm-ink-500)}
+
+  .field{margin:0 0 28px;padding:0;border:0;min-width:0}
+  .field:last-child{margin-bottom:0}
+  .field > label,.field > legend{display:block;font-weight:600;font-size:15px;line-height:1.4;margin-bottom:8px;padding:0}
+  .req{color:var(--cm-red);margin-left:3px}
+  .hint{display:block;font-size:13px;color:var(--cm-ink-500);margin:-2px 0 10px}
+
+  input[type=text],input[type=email],input[type=tel],textarea{
+    width:100%;font:inherit;font-size:15px;color:var(--cm-navy);background:var(--cm-paper);
+    border:1.5px solid var(--cm-line);border-radius:var(--radius-md);padding:13px 16px;
+    transition:border-color .2s,box-shadow .2s,background .2s;
+  }
+  input::placeholder,textarea::placeholder{color:var(--cm-ink-500);opacity:.7}
+  textarea{min-height:112px;resize:vertical}
+  input[type=text]:hover,input[type=email]:hover,input[type=tel]:hover,textarea:hover{border-color:var(--cm-navy-200)}
+  input[type=text]:focus,input[type=email]:focus,input[type=tel]:focus,textarea:focus{
+    outline:none;background:#fff;border-color:var(--cm-navy);box-shadow:0 0 0 4px var(--cm-gold-soft);
+  }
+
+  /* opções (radio / checkbox) */
+  .options{display:grid;gap:8px;margin-top:8px}
+  .opt{position:relative}
+  .opt input{position:absolute;opacity:0;pointer-events:none}
+  .opt label{
+    position:relative;display:flex;align-items:center;gap:14px;padding:12px 16px;margin:0;
+    background:var(--cm-paper);border:1.5px solid var(--cm-line);border-radius:var(--radius-md);
+    font-weight:400;font-size:15px;line-height:1.4;cursor:pointer;
+    transition:transform .14s var(--ease-out),border-color .2s,background .2s,box-shadow .2s;
+  }
+  .opt label::before{content:"";flex:none;width:20px;height:20px;background:#fff;border:1.5px solid var(--cm-ink-500);transition:all .2s}
+  .opt.radio label::before{border-radius:50%}
+  .opt.checkbox label::before{border-radius:6px}
+  .opt label:hover{border-color:var(--cm-navy);transform:translateY(-1px)}
+  .opt input:focus-visible + label{outline:2px solid var(--cm-gold);outline-offset:2px}
+  .opt input:checked + label{background:var(--cm-navy-100);border-color:var(--cm-navy);font-weight:500}
+  .opt.radio input:checked + label::before{border-color:var(--cm-navy);background:radial-gradient(circle,var(--cm-gold) 0 34%,var(--cm-navy) 38%)}
+  .opt.checkbox input:checked + label::before{border-color:var(--cm-navy);background:var(--cm-navy)}
+  .opt.checkbox input:checked + label::after{
+    content:"";position:absolute;left:19px;top:50%;width:12px;height:12px;margin-top:-6px;background:var(--cm-gold);
+    clip-path:polygon(50% 0%,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0% 50%,40% 40%);
+  }
+  .opt input:disabled + label{opacity:.4;cursor:not-allowed;transform:none}
+  .other{display:none;margin-top:8px}
+  .other.on{display:block}
+
+  /* erros */
+  .field.has-error input[type=text],.field.has-error input[type=email],.field.has-error input[type=tel],.field.has-error textarea{border-color:var(--cm-red)}
+  .field.has-error .opt label{border-color:#EDB3AD}
+  .err{display:none;color:var(--cm-red);font-size:13px;font-weight:500;margin-top:9px}
+  .field.has-error .err{display:block}
+
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+  /* ============ envio ============ */
+  .submit-row{position:relative;z-index:1;display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin:38px 0 40px}
+  button.send{
+    display:inline-flex;align-items:center;gap:10px;font:inherit;font-weight:600;font-size:17px;line-height:1;letter-spacing:.01em;
+    color:var(--cm-cream);background:var(--cm-navy);border:1.5px solid var(--cm-navy);border-radius:999px;padding:18px 36px;cursor:pointer;
+    transition:transform .14s var(--ease-out),background .2s,box-shadow .2s;
+  }
+  button.send .spark{color:var(--cm-gold);font-size:16px}
+  button.send:hover{background:var(--cm-navy-900);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+  button.send:active{transform:translateY(1px)}
+  button.send:disabled{opacity:.55;cursor:wait;transform:none}
+  .note{font-size:13px;color:var(--cm-ink-500);max-width:36ch;line-height:1.5}
+  .form-error{display:none;width:100%;color:var(--cm-red);font-size:14px;font-weight:500}
+  .form-error.on{display:block}
+
+  footer.foot{position:relative;z-index:1;text-align:center;padding:10px 0 64px}
+  footer.foot .sign{font-family:var(--font-script);color:var(--cm-red);font-size:30px;line-height:1.2}
+  footer.foot .handle{font-size:13px;color:var(--cm-ink-500);margin-top:4px;letter-spacing:.02em}
+  .bf-emb{display:none}
+
+  /* ============ tela de agradecimento ============ */
+  .done{display:none;position:relative;overflow:hidden;margin:56px 0 80px;padding:72px 44px 64px;background:var(--cm-navy);color:var(--cm-cream);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)}
+  .done.on{display:block}
+  .done .spark{color:var(--cm-gold);font-size:46px;display:block;margin-bottom:26px}
+  .done .eyebrow{color:rgba(240,223,210,.72);margin-bottom:14px}
+  .done h2{font-family:var(--font-serif);font-style:italic;font-weight:600;font-size:clamp(34px,6vw,54px);line-height:1.08;letter-spacing:-.02em;color:var(--cm-cream);margin:0 0 18px;max-width:11em;text-wrap:balance}
+  .done p{color:rgba(240,223,210,.82);max-width:27em;margin:0 0 24px;font-size:17px}
+  .done .sign{font-family:var(--font-script);color:var(--cm-gold);font-size:34px;line-height:1.2;margin:0}
+  .done .rose{position:absolute;right:-90px;bottom:-110px;width:270px;transform:rotate(-12deg);filter:drop-shadow(0 18px 34px rgba(0,0,0,.35));pointer-events:none}
+
+  @media (min-width:1000px){
+    .bf-blue{right:-300px;top:-20px;width:330px}
+    .bf-emb{display:block;position:absolute;left:-190px;top:58%;width:210px;transform:rotate(-16deg);opacity:.95;z-index:0}
+  }
+  @media (max-width:760px){
+    .bf-blue{right:-60px;top:84px;width:150px;opacity:.92}
+    h1{max-width:11em}
+  }
+  @media (max-width:560px){
+    section.block{padding:28px 20px}
+    .block-head{gap:12px}
+    .block-num{font-size:28px;min-width:36px}
+    .done{padding:56px 26px 150px}
+    .done .rose{width:200px;right:-50px;bottom:-60px}
+    button.send{width:100%;justify-content:center}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span id="bar"></span></div>
+
+<div class="wrap">
+  <div id="formArea">
+    <div class="brandbar">
+      <img src="assets/img/logo-cm.png" alt="CM">
+      <span>Camila Monteiro</span>
+    </div>
+
+    <header class="hero">
+      <img class="bf bf-blue" src="assets/img/butterfly-blue.webp" alt="" aria-hidden="true">
+      <p class="eyebrow"><span class="spark"></span>Briefing · Marca pessoal</p>
+      <h1>Me conta o que você <em>espera</em> da nossa entrega.</h1>
+      <p class="lead">Este formulário me ajuda a conhecer seus objetivos e o que você imagina receber, para eu montar um orçamento sob medida. Quanto mais detalhes, mais preciso fica.</p>
+      <p class="flourish">sem pressa, com carinho</p>
+      <div class="meta"><span><i class="spark"></i>Cerca de 10 minutos</span><span><i class="spark"></i>Campos com * são obrigatórios</span></div>
+    </header>
+
+    <form id="form" novalidate autocomplete="on">
+      <div class="hp" aria-hidden="true">
+        <label>Não preencha este campo <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+      <div id="sections"></div>
+
+      <div class="submit-row">
+        <button class="send" type="submit" id="sendBtn"><span class="spark"></span><span id="sendLabel">Enviar briefing</span></button>
+        <span class="note">Suas respostas chegam direto para mim e são usadas só para elaborar o seu orçamento.</span>
+        <div class="form-error" id="formError" role="alert"></div>
+      </div>
+    </form>
+
+    <footer class="foot">
+      <div class="sign">com carinho, Camila</div>
+      <div class="handle">@camilamonteirodesign</div>
+    </footer>
+  </div>
+
+  <div class="done" id="done" role="status" aria-live="polite">
+    <img class="rose" src="assets/img/rose-red.webp" alt="" aria-hidden="true">
+    <span class="spark"></span>
+    <p class="eyebrow">Briefing recebido</p>
+    <h2>Obrigada! Recebi suas respostas.</h2>
+    <p>Vou ler tudo com muito cuidado e volto com o orçamento e os próximos passos. Se lembrar de mais alguma informação, é só me responder.</p>
+    <p class="sign">com carinho, Camila</p>
+  </div>
+</div>
+
+<script>
+/* ------------------------------------------------------------------
+   Perguntas. Para editar o formulário, altere apenas esta lista.
+   type: text | textarea | email | tel | radio | checkbox
+   Opção chamada exatamente "Outro" abre um campo de texto.
+------------------------------------------------------------------- */
+const SECTIONS = [
+  { title: "Sobre você e seu negócio", questions: [
+    { id:"nome", label:"Nome completo e nome pelo qual quer ser conhecida", type:"text", required:true },
+    { id:"perfis", label:"Instagram, site e outros perfis atuais", type:"text", placeholder:"@seuperfil, www.seusite.com" },
+    { id:"area", label:"Área de atuação", type:"checkbox", required:true, options:["Psicologia clínica","Psicologia organizacional","Treinamentos e capacitações","Palestras","Mentorias","Outro"] },
+    { id:"trabalho", label:"Descreva seu trabalho em poucas palavras", type:"textarea", required:true },
+    { id:"tempo", label:"Há quanto tempo atua?", type:"text" },
+    { id:"servicos", label:"Quais produtos e serviços você vende hoje?", type:"textarea" },
+    { id:"destaque", label:"Qual é o principal serviço que você quer destacar?", type:"text" }
+  ]},
+  { title: "Público e posicionamento", questions: [
+    { id:"publico", label:"Quem é seu público ideal?", type:"textarea", required:true },
+    { id:"publico_tipo", label:"Seu público é majoritariamente", type:"checkbox", options:["Pessoa física","Empresas (B2B)","Gestores e RH","Profissionais da saúde","Outro"] },
+    { id:"percepcao", label:"Como você quer ser percebida?", hint:"Escolha até 5.", type:"checkbox", max:5, options:["Acolhedora","Autoridade técnica","Moderna","Sofisticada","Acessível","Inspiradora","Séria","Leve","Humana","Outro"] },
+    { id:"referencias", label:"Cite 2 ou 3 perfis que você admira (de qualquer área) e por quê", type:"textarea" },
+    { id:"evitar", label:"Existe algo que você NÃO quer na sua comunicação?", type:"textarea" }
+  ]},
+  { title: "Situação atual da marca", questions: [
+    { id:"identidade", label:"Você já tem identidade visual (logo, cores, fontes)?", type:"radio", required:true, options:["Sim, e quero manter","Sim, mas quero renovar","Não tenho"] },
+    { id:"materiais", label:"Você tem manual de marca ou materiais de referência?", hint:"Cole links (Drive, Dropbox, etc.). Se preferir, me envie os arquivos depois pelo contato.", type:"textarea" },
+    { id:"fotos", label:"Você tem fotos profissionais recentes?", type:"radio", options:["Sim","Algumas","Não"] },
+    { id:"instagram_hoje", label:"Como está seu Instagram hoje?", hint:"Frequência de postagem, resultados e dificuldades.", type:"textarea" },
+    { id:"profissional", label:"Você já teve ou tem outro profissional ou agência cuidando da sua comunicação?", type:"radio", options:["Sim, atualmente","Já tive","Nunca"] }
+  ]},
+  { title: "Objetivos e expectativas", lead:"Esta é a parte mais importante para eu dimensionar o projeto.", questions: [
+    { id:"objetivo", label:"Qual é o principal objetivo com a ampliação da sua marca?", hint:"Escolha até 3.", type:"checkbox", required:true, max:3, options:["Ganhar autoridade","Atrair mais clientes","Vender treinamentos e cursos","Fechar contratos com empresas","Ser convidada para palestras","Lançar um produto novo","Reposicionar a marca","Outro"] },
+    { id:"doze_meses", label:"Onde você quer estar daqui a 12 meses?", type:"textarea", required:true },
+    { id:"sucesso", label:"Quais resultados seriam um sucesso para você?", type:"textarea", required:true },
+    { id:"datas", label:"Existe algum lançamento, evento ou data importante no período?", type:"textarea" }
+  ]},
+  { title: "O que você espera receber", lead:"Marque tudo o que imagina dentro da nossa entrega.", questions: [
+    { id:"escopo", label:"Entregas esperadas", type:"checkbox", required:true, options:[
+      "Estudo de posicionamento e estratégia","Criação ou renovação de identidade visual","Manual de marca",
+      "Gestão de Instagram (planejamento + design + legendas)","Roteiros e direção de vídeos/Reels",
+      "Direção criativa de ensaio fotográfico","Materiais para treinamentos (apresentações, apostilas, certificados)",
+      "Material institucional (portfólio, media kit, proposta comercial)","Site ou landing page","Materiais de lançamento","Outro"] },
+    { id:"frequencia", label:"Frequência de conteúdo desejada", type:"radio", required:true, options:["Até 8 posts/mês","12 posts/mês","16 posts/mês","20+ posts/mês","Não sei, preciso de orientação"] },
+    { id:"formatos", label:"Formatos desejados", type:"checkbox", required:true, options:["Feed","Carrosséis","Stories","Reels","Capas de destaque","E-mail marketing","Outro"] },
+    { id:"plataformas", label:"Você espera que eu cuide de outras plataformas além do Instagram?", type:"checkbox", required:true, options:["LinkedIn","YouTube","TikTok","WhatsApp","Não, só Instagram"] },
+    { id:"publicacao", label:"Você espera que eu publique e responda a comentários e mensagens?", type:"radio", required:true, options:["Sim, tudo","Só publicar","Não, eu faço"] },
+    { id:"producao", label:"Quem produz as imagens e os vídeos?", type:"radio", required:true, options:["Eu envio o material","Contratarei um profissional","Espero indicação ou direção sua"] }
+  ]},
+  { title: "Dinâmica de trabalho", questions: [
+    { id:"aprovacao", label:"Quem vai aprovar as entregas? Só você ou mais pessoas?", type:"text" },
+    { id:"tempo_semana", label:"Quanto tempo por semana você consegue dedicar a reuniões, aprovações e gravações?", type:"radio", options:["Até 1h","1 a 3h","Mais de 3h"] },
+    { id:"inicio", label:"Prazo ideal para começar", type:"radio", options:["Imediatamente","Em até 30 dias","Em 2 a 3 meses","Ainda a definir"] },
+    { id:"duracao", label:"Duração desejada do projeto", type:"radio", options:["Projeto único","3 meses","6 meses","12 meses","Contínuo"] }
+  ]},
+  { title: "Para finalizar", questions: [
+    { id:"extra", label:"Algo mais que eu precise saber?", type:"textarea" },
+    { id:"whatsapp", label:"WhatsApp", type:"tel", placeholder:"(00) 00000-0000" },
+    { id:"email", label:"E-mail", type:"email", required:true, placeholder:"voce@email.com" }
+  ]}
+];
+
+/* Como enviar: "resend" (usa api/enviar.js) ou "web3forms" (cole a chave abaixo). */
+const ENVIO = "resend";
+const WEB3FORMS_KEY = "COLE_SUA_CHAVE_AQUI";
+
+const form = document.getElementById('form');
+const wrap = document.getElementById('sections');
+const bar = document.getElementById('bar');
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ALL = SECTIONS.flatMap(s => s.questions);
+
+/* ---------- render ---------- */
+SECTIONS.forEach((sec, i) => {
+  const el = document.createElement('section');
+  el.className = 'block';
+  let html = `<div class="block-head"><span class="block-num">${String(i+1).padStart(2,'0')}</span><div><h2>${esc(sec.title)}</h2>${sec.lead ? `<p>${esc(sec.lead)}</p>` : ''}</div></div>`;
+  sec.questions.forEach(q => { html += renderQuestion(q); });
+  el.innerHTML = html;
+  wrap.appendChild(el);
+});
+// colagem bordada decorativa ao lado do formulário (só telas largas)
+wrap.insertAdjacentHTML('afterbegin', '<img class="bf bf-emb" src="assets/img/butterfly-embroidered.webp" alt="" aria-hidden="true">');
+
+function renderQuestion(q){
+  const req = q.required ? '<span class="req" aria-hidden="true">*</span>' : '';
+  const hint = q.hint ? `<span class="hint">${esc(q.hint)}</span>` : '';
+  const err = `<div class="err">${q.type==='radio'||q.type==='checkbox' ? 'Selecione ao menos uma opção.' : 'Este campo é obrigatório.'}</div>`;
+  if (q.type === 'radio' || q.type === 'checkbox') {
+    const opts = q.options.map((o, k) => {
+      const id = `${q.id}_${k}`;
+      const outro = o === 'Outro' ? `<input type="text" class="other" data-for="${q.id}" placeholder="Qual?" aria-label="Outro: especifique">` : '';
+      return `<div class="opt ${q.type}"><input type="${q.type}" name="${q.id}" id="${id}" value="${esc(o)}"><label for="${id}">${esc(o)}</label>${outro}</div>`;
+    }).join('');
+    return `<fieldset class="field" data-q="${q.id}"><legend>${esc(q.label)}${req}</legend>${hint}<div class="options">${opts}</div>${err}</fieldset>`;
+  }
+  const attrs = `id="${q.id}" name="${q.id}" ${q.placeholder ? `placeholder="${esc(q.placeholder)}"` : ''} ${q.required ? 'required' : ''}`;
+  const input = q.type === 'textarea'
+    ? `<textarea ${attrs}></textarea>`
+    : `<input type="${q.type}" ${attrs} ${q.type==='email'?'autocomplete="email"':''} ${q.type==='tel'?'autocomplete="tel"':''}>`;
+  return `<div class="field" data-q="${q.id}"><label for="${q.id}">${esc(q.label)}${req}</label>${hint}${input}${err}</div>`;
+}
+
+/* ---------- interactions ---------- */
+form.addEventListener('change', e => {
+  const t = e.target;
+  if (t.matches('input[type=radio], input[type=checkbox]')) {
+    const q = ALL.find(x => x.id === t.name);
+    // abre/fecha campo "Outro"
+    form.querySelectorAll(`input.other[data-for="${t.name}"]`).forEach(o => {
+      const outroChecked = [...form.querySelectorAll(`input[name="${t.name}"]:checked`)].some(c => c.value === 'Outro');
+      o.classList.toggle('on', outroChecked);
+      if (outroChecked) o.focus();
+    });
+    // limite de seleções
+    if (q && q.max) {
+      const checked = form.querySelectorAll(`input[name="${q.id}"]:checked`).length;
+      form.querySelectorAll(`input[name="${q.id}"]`).forEach(c => { c.disabled = checked >= q.max && !c.checked; });
+    }
+  }
+  clearError(t); updateProgress();
+});
+form.addEventListener('input', e => { clearError(e.target); updateProgress(); });
+
+function clearError(t){ const f = t.closest && t.closest('.field'); if (f) f.classList.remove('has-error'); }
+
+function getValue(q){
+  const other = () => (form.querySelector(`input.other[data-for="${q.id}"]`)?.value || '').trim();
+  if (q.type === 'radio' || q.type === 'checkbox') {
+    const vals = [...form.querySelectorAll(`input[name="${q.id}"]:checked`)].map(c => c.value === 'Outro' ? `Outro: ${other() || '(não especificado)'}` : c.value);
+    return vals.join(', ');
+  }
+  return (form.elements[q.id].value || '').trim();
+}
+
+function updateProgress(){
+  const answered = ALL.filter(q => getValue(q)).length;
+  bar.style.width = Math.round(answered / ALL.length * 100) + '%';
+}
+
+/* ---------- envio ---------- */
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const errBox = document.getElementById('formError');
+  errBox.classList.remove('on');
+
+  let first = null;
+  ALL.forEach(q => {
+    const field = form.querySelector(`.field[data-q="${q.id}"]`);
+    let bad = !!(q.required && !getValue(q));
+    if (!bad && q.type === 'email') {
+      const v = getValue(q);
+      bad = !!v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      if (bad) field.querySelector('.err').textContent = 'Informe um e-mail válido.';
+    }
+    field.classList.toggle('has-error', bad);
+    if (bad && !first) first = field;
+  });
+  if (first) { first.scrollIntoView({ behavior:'smooth', block:'center' }); return; }
+
+  const nome = getValue(ALL.find(q => q.id==='nome'));
+  const email = getValue(ALL.find(q => q.id==='email'));
+
+  // Monta o e-mail: cada pergunta vira uma linha "01 · Pergunta" → resposta
+  const payload = {
+    access_key: WEB3FORMS_KEY,
+    subject: `Novo briefing de marca pessoal: ${nome}`,
+    from_name: 'Briefing · Marca pessoal',
+    name: nome,
+    email: email            // vira o "responder para" do e-mail que chega
+  };
+  SECTIONS.forEach((s, i) => {
+    s.questions.forEach(q => {
+      if (q.id === 'nome' || q.id === 'email') return;
+      const v = getValue(q);
+      if (v) payload[`${String(i+1).padStart(2,'0')} · ${q.label}`] = v;
+    });
+  });
+
+  const btn = document.getElementById('sendBtn');
+  const label = document.getElementById('sendLabel');
+  btn.disabled = true; label.textContent = 'Enviando…';
+  try {
+    // campo escondido anti-spam: se um robô preencheu, finge que deu certo
+    if (!form.elements['website'].value) {
+      if (ENVIO === 'resend') {
+        const sections = SECTIONS.map(sec => ({
+          title: sec.title,
+          items: sec.questions.map(q => ({ pergunta: q.label, resposta: getValue(q) })).filter(i => i.resposta)
+        })).filter(sec => sec.items.length);
+        const r = await fetch('/api/enviar', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ website: '', nome, email, sections })
+        });
+        if (!r.ok) throw new Error('erro');
+      } else {
+        if (ENVIO !== 'resend' && (!WEB3FORMS_KEY || WEB3FORMS_KEY.startsWith('COLE'))) throw new Error('chave ausente');
+        const r = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await r.json().catch(() => ({}));
+        if (!r.ok || !data.success) throw new Error(data.message || 'erro');
+      }
+    }
+    document.getElementById('formArea').style.display = 'none';
+    document.getElementById('done').classList.add('on');
+    bar.style.width = '100%';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch {
+    errBox.textContent = (ENVIO !== 'resend' && (!WEB3FORMS_KEY || WEB3FORMS_KEY.startsWith('COLE')))
+      ? 'Falta colar a chave do Web3Forms no index.html (veja o LEIA-ME).'
+      : 'Não consegui enviar agora. Tente novamente em instantes.';
+    errBox.classList.add('on');
+    btn.disabled = false; label.textContent = 'Enviar briefing';
+  }
+});
+</script>
+</body>
+</html>
