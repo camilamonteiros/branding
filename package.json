@@ -1,0 +1,6 @@
+{
+  "name": "briefing-marca-pessoal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Formulário de briefing que envia as respostas por e-mail (Vercel + Resend)"
+}
